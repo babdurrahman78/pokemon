@@ -17,6 +17,7 @@ const Pokemon_Detail = () => {
       alert(pokemon_name+ " Gagal ditangkap, coba lagi");
     }
   };
+  
   return (
     <div class="container px-5">
       <Query query={POKEMON} name={pokemon_name}>
