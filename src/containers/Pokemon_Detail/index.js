@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext }  from "react";
 import Query from "../../components/Query";
 import POKEMON from "../../queries/pokemon";
 
@@ -7,6 +7,16 @@ const Pokemon_Detail = () => {
   let url_split     = url.split("/");
   let pokemon_name  = url_split[4];
   //console.log(pokemon_name)
+
+  const catchPokemon = () => {
+    const randomNumber = Math.random();
+    if(randomNumber < 0.5){ 
+      return prompt(pokemon_name+" berhasil ditangkap\nMasukan nickname");
+    }
+    else{
+      alert(pokemon_name+ " Gagal ditangkap, coba lagi");
+    }
+  };
   return (
     <div class="container px-5">
       <Query query={POKEMON} name={pokemon_name}>
@@ -47,7 +57,7 @@ const Pokemon_Detail = () => {
               </div>  
 
               <div className="row mt-5">
-                <button type="button" class="btn btn-success">Catch</button>
+                <button type="button" class="btn btn-success" onClick={catchPokemon}>Catch</button>
               </div>
             </div>
           );
