@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 
-export const PokemonContext = createContext();
+const PokemonContext = createContext();
 
 export class PokemonProvider extends React.Component {
   updatepokemon = newpokemon => {
@@ -28,3 +28,5 @@ export class PokemonProvider extends React.Component {
     );
   }
 }
+
+export const PokemonConsumer = PokemonContext.Consumer;

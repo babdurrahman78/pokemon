@@ -1,4 +1,3 @@
-import Coba from "./containers/Coba";
 import Pokemon_List from "./containers/Pokemon_List";
 import Pokemon_Detail from "./containers/Pokemon_Detail";
 import Navig from "./components/Nav";

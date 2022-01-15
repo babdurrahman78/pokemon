@@ -4,8 +4,8 @@ import POKEMONS from "../../queries/pokemons";
 import { Link } from "react-router-dom";
 
 const Pokemon_List = () => {
-  return (
-
+	//let limit = 4;
+	return (
   		<div class="container px-5 mt-5">
   			<div class="text-center mb-5">
   				<h1 class="fw-bolder">List Pokemons</h1>
