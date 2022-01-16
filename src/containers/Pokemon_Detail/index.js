@@ -11,7 +11,9 @@ const Pokemon_Detail = () => {
   const catchPokemon = () => {
     const randomNumber = Math.random();
     if(randomNumber < 0.5){ 
-      return prompt(pokemon_name+" berhasil ditangkap\nMasukan nickname");
+      return (
+        prompt(pokemon_name+" berhasil ditangkap\nMasukan nickname")
+      )
     }
     else{
       alert(pokemon_name+ " Gagal ditangkap, coba lagi");
@@ -58,7 +60,17 @@ const Pokemon_Detail = () => {
               </div>  
 
               <div className="row mt-5">
-                <button type="button" class="btn btn-success" onClick={catchPokemon}>Catch</button>
+                <button type="button" 
+                  class="btn btn-success" 
+                  onClick={event => {
+                    let nickname = catchPokemon();
+                    if(nickname){
+                      console.log(nickname, pokemon.name)
+                      alert("Pokemon berhasil ditambahkan ke [My Pokemon]");
+                    }
+                  }}
+                >Catch
+                </button>
               </div>
             </div>
           );
