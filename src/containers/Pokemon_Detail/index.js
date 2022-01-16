@@ -21,24 +21,24 @@ const Pokemon_Detail = () => {
   };
   
   return (
-    <div className="container px-5">
+    <div class="container px-5">
       <Query query={POKEMON} name={pokemon_name}>
         {({ data: { pokemon } }) => {
           return (
             <div>
               <div className="card-body text-center">
-                <h1 className="card-title">{pokemon.name}</h1>
+                <h1 class="card-title">{pokemon.name}</h1>
                 <img src={pokemon.sprites.front_default}/>
               </div>
               
               <div className="row">
                 <div className="col-md-8 scroll mb-3">
-                  <div className="card">
+                  <div class="card">
                     <h5 className="card-header">Type's {pokemon.name}</h5>
-                    <div className="card-body">
+                    <div class="card-body">
                       {pokemon.moves.map((move)=>{
                         return(
-                          <span className="card-text">{move.move.name}, </span> 
+                          <span class="card-text">{move.move.name}, </span> 
                         );
                       })}
                     </div>
@@ -46,12 +46,12 @@ const Pokemon_Detail = () => {
                 </div>
 
                 <div className="col-md-4">
-                  <div className="card">
+                  <div class="card">
                     <h5 className="card-header">Move's {pokemon.name}</h5>
-                    <div className="card-body">
+                    <div class="card-body">
                       {pokemon.types.map((type)=>{
                         return(
-                          <p className="card-text">{type.type.name}</p> 
+                          <p class="card-text">{type.type.name}</p> 
                         );
                       })}
                     </div>

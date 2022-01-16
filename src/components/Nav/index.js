@@ -13,7 +13,7 @@ const Navig = () => {
             />
           </a>
         </Navbar.Brand>
-
+        
       <Nav.Link className="text-reset" href="/mypokemon">My Pokemon</Nav.Link>
     </nav>
     );
