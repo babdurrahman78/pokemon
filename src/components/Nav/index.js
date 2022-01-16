@@ -1,18 +1,15 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
-import logo from "../../asset/logo1.png";
 
 const Navig = () => {
   return (
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark px-3">
-      <a class="navbar-brand" href="/">Home</a>
-      <div class="ml-auto">
-        <a class="navbar-brand d-sm-none" href="/mypokemon">My Pokemon</a>
+    <nav className="navbar navbar-expand-sm bg-light navbar-light px-3">
+      <a className="navbar-brand" href="/">Home</a>
+      <div className="ml-auto">
+        <a className="navbar-brand d-sm-none" href="/mypokemon">My Pokemon</a>
       </div>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <a class="navbar-brand d-none d-sm-block" href="/mypokemon">My Pokemon</a>
+      <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <a className="navbar-brand d-none d-sm-block" href="/mypokemon">My Pokemon</a>
       </div>
 
     </nav>
