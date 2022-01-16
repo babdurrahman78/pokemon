@@ -4,11 +4,11 @@ import logo from "../../asset/logo1.png";
 
 const Navig = () => {
   return (
-    <nav class="navbar navbar-light bg-light justify-content-between px-5">
+    <nav className="navbar navbar-light bg-light justify-content-between px-5">
         <Navbar.Brand>
           <a href="/">
             <img
-              class="img"
+              className="img"
               src={logo}
             />
           </a>
