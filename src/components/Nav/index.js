@@ -4,17 +4,17 @@ import logo from "../../asset/logo1.png";
 
 const Navig = () => {
   return (
-    <nav className="navbar navbar-light bg-light justify-content-between px-5">
-        <Navbar.Brand>
-          <a href="/">
-            <img
-              className="img"
-              src={logo}
-            />
-          </a>
-        </Navbar.Brand>
-        
-      <Nav.Link className="text-reset" href="/mypokemon">My Pokemon</Nav.Link>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark px-3">
+      <a class="navbar-brand" href="/">Home</a>
+      <div class="ml-auto">
+        <a class="navbar-brand d-sm-none" href="/mypokemon">My Pokemon</a>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <a class="navbar-brand d-none d-sm-block" href="/mypokemon">My Pokemon</a>
+      </div>
+
     </nav>
     );
   };
