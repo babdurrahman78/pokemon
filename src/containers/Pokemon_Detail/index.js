@@ -1,23 +1,31 @@
-import React, { useState, useContext }  from "react";
+import React, { useContext }  from "react";
 import Query from "../../components/Query";
 import POKEMON from "../../queries/pokemon";
+import { MyPokemonContext } from "../../components/PokemonContext";
+
 
 const Pokemon_Detail = () => {
   let url           = window.location.href;
   let url_split     = url.split("/");
   let pokemon_name  = url_split[4];
-  //console.log(pokemon_name)
 
-  const catchPokemon = () => {
-    const randomNumber = Math.random();
-    if(randomNumber < 0.5){ 
-      return (
-        prompt(pokemon_name+" berhasil ditangkap\nMasukan nickname")
-      )
-    }
-    else{
-      alert(pokemon_name+ " Gagal ditangkap, coba lagi");
-    }
+  const [state, dispatch] = useContext(MyPokemonContext);
+
+  const catchPokemon = (name, image) => {
+    // const randomNumber = Math.random();
+    // if(randomNumber < 0.5){ 
+        // prompt(pokemon_name+" berhasil ditangkap\nMasukan nickname")
+        dispatch({
+          type: "ADD_POKEMON",
+          payload: {
+            name,
+            image,
+          },
+        })
+    // }
+    // else{
+    //   alert(pokemon_name+ " Gagal ditangkap, coba lagi");
+    // }
   };
   
   return (
@@ -28,7 +36,7 @@ const Pokemon_Detail = () => {
             <div>
               <div className="card-body text-center">
                 <h1 class="card-title">{pokemon.name}</h1>
-                <img src={pokemon.sprites.front_default}/>
+                <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
               </div>
               
               <div className="row">
@@ -48,10 +56,10 @@ const Pokemon_Detail = () => {
                 <div className="col-md-4">
                   <div class="card">
                     <h5 className="card-header">Move's {pokemon.name}</h5>
-                    <div class="card-body">
+                    <div className="card-body">
                       {pokemon.types.map((type)=>{
                         return(
-                          <p class="card-text">{type.type.name}</p> 
+                          <p className="card-text">{type.type.name}</p> 
                         );
                       })}
                     </div>
@@ -62,13 +70,7 @@ const Pokemon_Detail = () => {
               <div className="row mt-5">
                 <button type="button" 
                   class="btn btn-success" 
-                  onClick={event => {
-                    let nickname = catchPokemon();
-                    if(nickname){
-                      console.log(nickname, pokemon.name)
-                      alert("Pokemon berhasil ditambahkan ke [My Pokemon]");
-                    }
-                  }}
+                  onClick={() => catchPokemon(pokemon.name, pokemon.sprites.front_default)}
                 >Catch
                 </button>
               </div>
