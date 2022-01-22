@@ -1,6 +1,6 @@
 import Pokemon_List from "./containers/Pokemon_List";
 import MyPokemon from "./containers/MyPokemon";
-//import Coba from "./containers/Coba";
+import Coba from "./containers/Coba";
 import Pokemon_Detail from "./containers/Pokemon_Detail";
 import Navig from "./components/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
